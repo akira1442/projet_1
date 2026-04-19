@@ -34,7 +34,7 @@ class Proie(Agent):
     def move(self, depl):
     
         """_summary_
-        Les proies se déplacent en utilisant le voisinage de Moore
+        Les predateurs se déplacent en utilisant le voisinage de Moore
         Déplacement dans 8 directions adjacentes
         """
     
