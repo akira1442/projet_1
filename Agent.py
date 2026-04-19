@@ -33,6 +33,9 @@ class Agent(ABC):
         self.age = 0
         self.energie = 100
         self.can_reproduce = False
+        
+    def getPos(self):
+        return self.pos
     
     @abstractmethod
     def move(self):
