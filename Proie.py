@@ -1,12 +1,11 @@
 import random
-
-import Agent
+from AgentDeplacement import AgentDeplacement as AD
 from typing import Tuple
 
 __reproduce_cooldown__ = 10
 __reproduce_rate__ = 0.5
 
-class Proie(Agent):
+class Proie(AD):
     
     def __init__(self, pos):
         
@@ -38,6 +37,7 @@ class Proie(Agent):
         Déplacement dans 8 directions adjacentes
         """
     
-        neighbors = Agent.moore_neighborhood(self.pos, 36)
+        neighbors = AD.moore_neighborhood(self.pos, 36)
         self.pos = random.choice(neighbors)
+        
      

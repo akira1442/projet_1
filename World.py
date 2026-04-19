@@ -1,6 +1,6 @@
 import random as r
-import Proie
-import Predateur
+from Proie import Proie
+from Predateur import Predateur
 
 _liste_Proie_ = [Proie( (r.randint(0,9), r.randint(0,9)) ) for i in range(2)]
 _liste_Predateur = [Predateur((r.randint(0,9), r.randint(0,9))) for i in range(2)]

@@ -1,10 +1,10 @@
 import random
-import Agent
+from AgentDeplacement import AgentDeplacement as AD
 
 __reproduce_cooldown__ = 12
 __reproduce_rate__ = 0.35
 
-class Predateur(Agent):
+class Predateur(AD):
     
     def __init__(self, pos):
         
@@ -29,12 +29,15 @@ class Predateur(Agent):
             else:
                 self.can_reproduce = True
                 
-    def move(self, depl):
+    def move(self):
     
         """_summary_
         Les proies se déplacent en utilisant le voisinage de Moore
         Déplacement dans 8 directions adjacentes
         """
     
-        neighbors = Agent.moore_neighborhood(self.pos, 36)
+        neighbors = AD.moore_neighborhood(self.pos, 36)
         self.pos = random.choice(neighbors)
+        
+    def eat(self):
+        return super().eat()
