@@ -31,7 +31,7 @@ class Proie(Agent):
             else:
                 self.can_reproduce = True
     
-    def move(self, depl):
+    def move(self):
     
         """_summary_
         Les predateurs se déplacent en utilisant le voisinage de Moore
