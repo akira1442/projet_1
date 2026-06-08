@@ -27,10 +27,6 @@ public class Position {
         return new Position(0, 0, 0);
     }
 
-    public boolean accessPosition(int x, int y, int z){
-        return true;
-    }
-
     public int getX(){
         return this.x;
     }
@@ -41,5 +37,12 @@ public class Position {
 
     public int getZ() {
         return z;
+    }
+
+    public void newPos(Position p){
+
+        this.x = p.x;
+        this.y = p.y;
+        this.z = p.z;
     }
 }
