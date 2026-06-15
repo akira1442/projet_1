@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public abstract class AgentDeplacement extends AgentReproduce{
+public abstract class AgentDeplacement extends AgentDecorator{
 
     private class Comportement{
 
@@ -61,7 +61,7 @@ public abstract class AgentDeplacement extends AgentReproduce{
         
         Comportement c = new Comportement();
         c.mooreNeighborhood(getPos(), GRIDSIZE);
-        super.pos.newPos(neighbors[(int)(Math.random() * 8)]);
+        super.getPosition().newPos(neighbors[(int)(Math.random() * 8)]);
     }
 
     /**

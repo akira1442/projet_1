@@ -1,4 +1,4 @@
-public abstract class AgentReproduce implements Agent{
+public abstract class AgentReproduce extends AgentDecorator{
     
     protected Position pos;
     /**
@@ -8,7 +8,7 @@ public abstract class AgentReproduce implements Agent{
     private boolean canReproduce;
 
     public AgentReproduce(Position pos){
-        this.pos = pos;
+        super(pos);
         this.sexe = (int)(Math.random() * 2);
         this.canReproduce = true;
     }

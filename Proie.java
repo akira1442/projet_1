@@ -1,4 +1,4 @@
-public class Proie extends AgentDeplacement{
+public class Proie extends Agent{
     
     // Variable global
     
@@ -8,11 +8,17 @@ public class Proie extends AgentDeplacement{
     // Variable d'attribut
 
     private int reproduceCD;
+    private Position pos;
+    private int age;
+    private int energie;
 
     // Constructeur
 
-    public Proie(Position pos){
-        super(pos);
+    public Proie(Position pos, int age, int energie){
+        
+        this.pos = pos;
+        this.age = age;
+        this.energie = energie;
         this.reproduceCD = REPRODUCE_COOLDOWN;
     }
 
