@@ -13,3 +13,11 @@
  ## 08-09/06/2026 (22h-01h44)
 
  * Après une longue pause on **reprend le projet**. On a commencer à commenter/documenter le code, on a **corriger certaines méthodes** mais on a surtout commencer l'implémentation de la classe **Proie** en **Java**. Avant on a **ajouter** la classe **AgentReproduce**, **Agent** est maintenant une *interface*, et **AgentDeplacement étend AgentReproduce** qui *implémente* **Agent**. La **structure** du code a été **repensé**, mais n'est **pas encore stable**, on avance doucement, on **prend notre temps** pour avoir le **code** le plus **claire** possible. Pour la **prochaine fois** il faudrait finir le déplacement des **Proie**, et faire **tests**. Actuellement **aucun tests n'a été fait**, on commencera par des **tests unitaires**, puis des **tests plus complexes** pour testé la robustesse de notre code. Des zones de *concurrence* ont **déjà trouvé**. Aussi pour **gérer les déplacements** des **Agent**, on a créer une *classe interne* **Comportement** qui stocke les différents *comportements* pour les **Agent**. La **classe peut encore évolué** vers une classe *public* qui sera aussi utilisé par **AgentStatic** pour la *reproduction/prolifération*.
+
+ ## 12/06/2026
+
+ * On a corrigé le Decorator, il était très mal implémenté. Je ne sait pas encore, si il vas le garder, en tout cas je sait que si on le garde, il va falloir l'améliorer car il n'est pas encore parfait. Pour la prochaine il faut continuer, la transition au Java pour faire les premiers tests, surtout les tests unitaire.
+
+ ## 15-16/06/2026
+
+ * Le design pattern Decorator est cet fois vraiment corrigé. Pour la prochaine session faire la méthode positionAccessible dans AgentDeplacement, ainsi que la class World pour les tests.

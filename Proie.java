@@ -1,4 +1,4 @@
-public class Proie extends Agent{
+public class Proie implements Agent{
     
     // Variable global
     
@@ -7,59 +7,66 @@ public class Proie extends Agent{
 
     // Variable d'attribut
 
-    private int reproduceCD;
+    private String name;
     private Position pos;
     private int age;
     private int energie;
+    private int sexe;
+    private int reproduceCD;
 
     // Constructeur
 
-    public Proie(Position pos, int age, int energie){
+    public Proie(String name, Position pos, int age, int energie){
         
+        this.name = name;
         this.pos = pos;
         this.age = age;
         this.energie = energie;
         this.reproduceCD = REPRODUCE_COOLDOWN;
+        this.sexe = (int)(Math.random() * 2);
     }
 
     // Méthodes 
 
-    // Méthodes héritées
+    public void reproduceCD(){
 
-    @Override
-    public void reproduceCooldown() {
-        
-        if (!this.CanReproduce() && this.reproduceCD < 0){
-            this.reproduceCD--;
-        }else{
-            this.setReproduce(true);
-        }
+        this.reproduceCD--;
     }
-
+    
     // Getteurs/Accesseurs
     
-    @Override
+    public String getName(){
+
+        return this.name;
+    }
     public int getAge() {
-        // TODO Auto-generated method stub
-        return 0;
+        
+        return this.age;
     }
     
-    @Override
-    public Proie reproduce() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    
-    @Override
     public Position getPos() {
-        // TODO Auto-generated method stub
-        return null;
+        
+        return this.pos;
     }
     
-    @Override
     public int getEnergie() {
-        // TODO Auto-generated method stub
-        return 0;
+        
+        return this.energie;
     }
 
+    public int getSexe(){
+
+        return this.sexe;
+    }
+
+    public int getReproduceCD(){
+
+        return this.reproduceCD;
+    }
+
+    @Override
+    public String toString(){
+
+        return String.format("%s, Position: %s, Energie: %d, Age: %d, Sexe: %d", this.name, this.getPos().toString(), this.energie, this.age, this.sexe);
+    }
 }

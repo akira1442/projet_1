@@ -1,20 +1,23 @@
 public abstract class AgentReproduce extends AgentDecorator{
     
-    protected Position pos;
-    /**
-     * @param sexe 1 Male 0 Femelle
-     */
-    private int sexe;
     private boolean canReproduce;
 
-    public AgentReproduce(Position pos){
-        super(pos);
-        this.sexe = (int)(Math.random() * 2);
+    public AgentReproduce(Agent agent){
+    
+        super(agent);
         this.canReproduce = true;
     }
 
     public abstract Agent reproduce();
-    public abstract void reproduceCooldown();
+    
+    public void reproduceCooldown() {
+        
+        if (!this.CanReproduce() && super.getReproduceCD() < 0){
+            super.reproduceCD();
+        }else{
+            this.setReproduce(true);
+        }
+    }
     
     public boolean CanReproduce(){
 
@@ -24,10 +27,5 @@ public abstract class AgentReproduce extends AgentDecorator{
     public void setReproduce(boolean repro){
 
         this.canReproduce = repro;
-    }
-
-    public int getSexe(){
-
-        return this.sexe;
     }
 }

@@ -45,9 +45,9 @@ public abstract class AgentDeplacement extends AgentDecorator{
      * @param pos 
      * Constructeur de base
      */
-    public AgentDeplacement(Position pos) {
+    public AgentDeplacement(Agent agent) {
         
-        super(pos);
+        super(agent);
         this.neighbors = new Position[8];
     }
 
@@ -61,7 +61,7 @@ public abstract class AgentDeplacement extends AgentDecorator{
         
         Comportement c = new Comportement();
         c.mooreNeighborhood(getPos(), GRIDSIZE);
-        super.getPosition().newPos(neighbors[(int)(Math.random() * 8)]);
+        super.getPos().newPos(neighbors[(int)(Math.random() * 8)]);
     }
 
     /**
@@ -70,7 +70,8 @@ public abstract class AgentDeplacement extends AgentDecorator{
      * @param p
      * @return 
      */
-    public boolean accessPosition(Position p){
+    public boolean positionAccessible(Position p){
+        
         return true;
     }
 
