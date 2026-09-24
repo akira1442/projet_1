@@ -21,3 +21,7 @@
  ## 15-16/06/2026
 
  * Le design pattern Decorator est cet fois vraiment corrigé. Pour la prochaine session faire la méthode positionAccessible dans AgentDeplacement, ainsi que la class World pour les tests.
+
+ ## 26/06/2026
+
+ * Je suis dans la merde

@@ -1,3 +1,7 @@
+package agent;
+
+import phys.Position;
+
 public abstract class AgentDecorator implements Agent{
 
     private Agent agent;
@@ -5,6 +9,15 @@ public abstract class AgentDecorator implements Agent{
     public AgentDecorator(Agent agent){
         
         this.agent = agent;
+    }
+
+    public void move(){
+        this.agent.move();
+    }
+
+    public String getName(){
+
+        return agent.getName();
     }
 
     public Position getPos(){

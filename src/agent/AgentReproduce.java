@@ -1,3 +1,4 @@
+package agent;
 public abstract class AgentReproduce extends AgentDecorator{
     
     private boolean canReproduce;

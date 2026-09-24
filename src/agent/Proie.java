@@ -1,3 +1,7 @@
+package agent;
+
+import phys.*;
+
 public class Proie implements Agent{
     
     // Variable global
@@ -27,6 +31,12 @@ public class Proie implements Agent{
     }
 
     // Méthodes 
+
+    @Override
+    public void move() {
+        
+        return;
+    }
 
     public void reproduceCD(){
 

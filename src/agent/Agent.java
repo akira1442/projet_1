@@ -1,3 +1,5 @@
+package agent;
+import phys.Position;
 
 public interface Agent{
 
@@ -8,4 +10,5 @@ public interface Agent{
     public int getSexe();
     public int getReproduceCD();
     public void reproduceCD();
+    public void move();
 }

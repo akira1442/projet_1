@@ -1,3 +1,7 @@
+package agent;
+
+import phys.*;
+
 public class Predateur implements Agent{
     
     // Variable global
@@ -68,5 +72,11 @@ public class Predateur implements Agent{
     public String toString(){
 
         return String.format("%s, Position: %s, Energie: %d, Age: %d, Sexe: %d", this.name, this.getPos().toString(), this.energie, this.age, this.sexe);
+    }
+
+    @Override
+    public void move() {
+        
+        
     }
 }

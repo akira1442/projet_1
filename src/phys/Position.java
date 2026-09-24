@@ -1,3 +1,4 @@
+package phys;
 
 public class Position {
 
@@ -16,6 +17,11 @@ public class Position {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public Position(){
+
+        this((int)(Math.random()*50), (int)(Math.random()*50), (int)(Math.random()*50));
     }
 
     /**

@@ -1,7 +1,10 @@
+package agent;
+
+import phys.Position;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public abstract class AgentDeplacement extends AgentDecorator{
+public class AgentDeplacement extends AgentDecorator{
 
     private class Comportement{
 
@@ -57,7 +60,7 @@ public abstract class AgentDeplacement extends AgentDecorator{
      * @param pos
      * @param gridSize
      */
-    public void move(Proie p){
+    public void move(){
         
         Comportement c = new Comportement();
         c.mooreNeighborhood(getPos(), GRIDSIZE);
