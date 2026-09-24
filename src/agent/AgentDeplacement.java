@@ -81,4 +81,9 @@ public class AgentDeplacement extends AgentDecorator{
     public Position[] getNeighbors() {
         return neighbors;
     }
+
+    @Override 
+    public String toString(){
+        return super.toString();
+    }
 }

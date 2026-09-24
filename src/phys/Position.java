@@ -42,7 +42,7 @@ public class Position {
     }
 
     public int getZ() {
-        return z;
+        return this.z;
     }
 
     public void newPos(Position p){

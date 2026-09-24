@@ -49,4 +49,10 @@ public abstract class AgentDecorator implements Agent{
 
         agent.reproduceCD();
     }
+
+    @Override 
+    public String toString(){
+
+        return agent.toString();
+    }
 }
