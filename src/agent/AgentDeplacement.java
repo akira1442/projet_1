@@ -44,6 +44,8 @@ public class AgentDeplacement extends AgentDecorator{
     public static final ArrayList<Integer> DIRECTION = new ArrayList<>(Arrays.asList(-1, 0, 1)); 
     public static int GRIDSIZE = 50;
 
+    private int energie;
+
     /**
      * @param pos 
      * Constructeur de base
@@ -51,20 +53,33 @@ public class AgentDeplacement extends AgentDecorator{
     public AgentDeplacement(Agent agent) {
         
         super(agent);
+        this.energie = agent.getEnergie();
         this.neighbors = new Position[8];
     }
-
+    
     /**
      * Méthode utilisé pour se déplacer dans la grille
      * Les agents n'auront pas les même algorithmes de déplacement en fonction de type et/ou comportement
      * @param pos
      * @param gridSize
      */
+    @Override
     public void move(){
         
         Comportement c = new Comportement();
         c.mooreNeighborhood(getPos(), GRIDSIZE);
-        super.getPos().newPos(neighbors[(int)(Math.random() * 8)]);
+        
+        Position p = neighbors[(int)(Math.random() * 8)];
+        
+        try{
+            super.getPos().newPos(p);
+        }catch(NullPointerException e){
+            while (p == null) {
+                p = neighbors[(int)(Math.random() * 8)];
+                System.err.println(e);
+            }
+        }
+        super.energyExpend(1);
     }
 
     /**

@@ -5,14 +5,22 @@ import phys.Position;
 public abstract class AgentDecorator implements Agent{
 
     private Agent agent;
+    private int energie;
 
     public AgentDecorator(Agent agent){
         
         this.agent = agent;
     }
 
+    @Override 
+    public void energyExpend(int x){
+
+        agent.energyExpend(x);
+    }
+
     public void move(){
-        this.agent.move();
+        agent.move();
+        this.energie--;
     }
 
     public String getName(){

@@ -32,6 +32,12 @@ public class Proie implements Agent{
 
     // Méthodes 
 
+    @Override 
+    public void energyExpend(int x){
+
+        this.energie -= x;
+    }
+
     @Override
     public void move() {
         

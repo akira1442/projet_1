@@ -11,4 +11,5 @@ public interface Agent{
     public int getReproduceCD();
     public void reproduceCD();
     public void move();
+    public void energyExpend(int x);
 }

@@ -32,10 +32,17 @@ public class Predateur implements Agent{
 
     // Méthodes 
 
+    @Override 
+    public void energyExpend(int x){
+
+        this.energie -= x;
+    }
+
     public void reproduceCD(){
 
         this.reproduceCD--;
     }
+
     // Getteurs/Accesseurs
     
     public String getName(){
@@ -76,7 +83,6 @@ public class Predateur implements Agent{
 
     @Override
     public void move() {
-        
         
     }
 }

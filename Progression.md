@@ -25,3 +25,7 @@
  ## 26/06/2026
 
  * Je suis dans la merde
+
+ ## 25/06/2026
+
+ * Après deux mois sans travailler on reprend le projet, j'avais pas de motivation pour travailler je devais prendre mes distance. On reprend on revoie l'arborescance du projet, on fait quelques tests. Les tests sont fait à la main tout les cas ne sont pas vérifié, mais tous fonctionnent. Il faudrait faire des tests unitaire mais j'ai un peu la flemme. En tout cas on vas essayer de essayer de bosser plus régulièrment, le Decorateur Deplacement fonctionne, on vas essayer de faire une première simulation puis tester la Reproduction.

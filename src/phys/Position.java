@@ -20,7 +20,7 @@ public class Position {
     }
 
     public Position(){
-
+        
         this((int)(Math.random()*50), (int)(Math.random()*50), (int)(Math.random()*50));
     }
 
