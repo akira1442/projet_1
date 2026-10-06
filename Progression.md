@@ -24,8 +24,12 @@
 
  ## 26/06/2026
 
- * Je suis dans la merde
+ * On fais une pause
 
  ## 25/09/2026
 
  * Après deux mois sans travailler on reprend le projet, j'avais pas de motivation pour travailler je devais prendre mes distance. On reprend on revoie l'arborescance du projet, on fait quelques tests. Les tests sont fait à la main tout les cas ne sont pas vérifié, mais tous fonctionnent. Il faudrait faire des tests unitaire mais j'ai un peu la flemme. En tout cas on vas essayer de essayer de bosser plus régulièrment, le Decorateur Deplacement fonctionne, on vas essayer de faire une première simulation puis tester la Reproduction.
+
+ ## 5-6/09/2026
+
+ * La on a bien avancer, la class World a été créer pour contenir tous les éléments qui composent le monde. Des modifications on été réaliser dans AgentDeplacement, et le concepte de reproduction commence à être mis en place. Pour la reproduction, on fait simple, deux agents de même type sont côte à côte et peuvent se reproduire (reproduceCD == 0), alors ils crée un nouvel agent. Plus tard des algorithme génétique seront implémenté.
