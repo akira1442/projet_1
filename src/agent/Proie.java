@@ -8,6 +8,7 @@ public class Proie implements Agent{
     
     public static int REPRODUCE_COOLDOWN = 10;
     public static double REPRODUCE_RATE = 0.5;
+    public static int nbProie = 0; 
 
     // Variable d'attribut
 
@@ -22,12 +23,13 @@ public class Proie implements Agent{
 
     public Proie(String name, Position pos, int age, int energie){
         
-        this.name = name;
+        this.name = name+nbProie;
         this.pos = pos;
         this.age = age;
         this.energie = energie;
         this.reproduceCD = REPRODUCE_COOLDOWN;
         this.sexe = (int)(Math.random() * 2);
+        nbProie++;
     }
 
     // Méthodes 
@@ -42,6 +44,24 @@ public class Proie implements Agent{
     public void move() {
         
         return;
+    }
+
+    @Override 
+    public Agent reproduce(Agent partner){
+
+        if (this.getSexe() != partner.getSexe() && this.getEnergie() > 50 && partner.getEnergie() > 50){
+            if (this.getReproduceCD() == 0 && partner.getReproduceCD() == 0 && Math.random() < REPRODUCE_RATE){
+                Agent child = new Proie("ChildProie", new Position(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ()), 0, 100);
+                
+                this.energyExpend(this.getEnergie()/2);
+                partner.energyExpend(partner.getEnergie()/2);
+                this.reproduceCD();
+                partner.reproduceCD();
+
+                return child;
+            }
+        }
+        return null;
     }
 
     public void reproduceCD(){

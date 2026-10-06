@@ -8,6 +8,7 @@ public interface Agent{
     public int getEnergie();
     public int getAge();
     public int getSexe();
+    public Agent reproduce(Agent partner);
     public int getReproduceCD();
     public void reproduceCD();
     public void move();

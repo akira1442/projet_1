@@ -13,7 +13,7 @@ public class Position {
      * @param z Coordonnée hauteur int
      */
     public Position(int x, int y, int z){
-
+        
         this.x = x;
         this.y = y;
         this.z = z;
@@ -21,7 +21,7 @@ public class Position {
 
     public Position(){
         
-        this((int)(Math.random()*50), (int)(Math.random()*50), (int)(Math.random()*50));
+        this((int)(Math.random()*World.TAILLE), (int)(Math.random()*World.TAILLE), (int)(Math.random()*World.TAILLE));
     }
 
     /**

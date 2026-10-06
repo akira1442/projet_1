@@ -1,9 +1,14 @@
 package agent;
 
-import phys.Position;
+import phys.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Decorateur permettant de gérer le déplacement des agents
+ * Les agents ne ont différents comportements de déplacement en fonction de leur type ou état
+ * Deux agents ne peuvent pas occuper la même case
+ */
 public class AgentDeplacement extends AgentDecorator{
 
     private class Comportement{
@@ -20,11 +25,11 @@ public class AgentDeplacement extends AgentDecorator{
                     // TODO #1 méthode accessPosition dans Position
                     int nx = pos.getX() + dx;
                     int ny = pos.getY() + dy;
-                    if ((nx < gridSize) && (ny < gridSize)){
+                    if ((nx >= 0) && (nx < gridSize) && (ny >= 0) && (ny < gridSize)){
                         try{
                             neighbors[indice] = new Position(nx, ny, 0);
                             indice++;
-                        }catch(IndexOutOfBoundsException e){
+                        }catch(NullPointerException e){
                             System.out.println(String.format("%s, indice = %d", e, indice));
                         }
                     }
@@ -42,9 +47,6 @@ public class AgentDeplacement extends AgentDecorator{
      * Valeurs: -1 0 1
      */
     public static final ArrayList<Integer> DIRECTION = new ArrayList<>(Arrays.asList(-1, 0, 1)); 
-    public static int GRIDSIZE = 50;
-
-    private int energie;
 
     /**
      * @param pos 
@@ -53,7 +55,6 @@ public class AgentDeplacement extends AgentDecorator{
     public AgentDeplacement(Agent agent) {
         
         super(agent);
-        this.energie = agent.getEnergie();
         this.neighbors = new Position[8];
     }
     
@@ -67,7 +68,7 @@ public class AgentDeplacement extends AgentDecorator{
     public void move(){
         
         Comportement c = new Comportement();
-        c.mooreNeighborhood(getPos(), GRIDSIZE);
+        c.mooreNeighborhood(getPos(), World.TAILLE);
         
         Position p = neighbors[(int)(Math.random() * 8)];
         

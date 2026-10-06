@@ -1,32 +1,21 @@
 package agent;
-public abstract class AgentReproduce extends AgentDecorator{
-    
-    private boolean canReproduce;
+
+public class AgentReproduce extends AgentDecorator{
+
 
     public AgentReproduce(Agent agent){
     
         super(agent);
-        this.canReproduce = true;
     }
 
-    public abstract Agent reproduce();
-    
-    public void reproduceCooldown() {
-        
-        if (!this.CanReproduce() && super.getReproduceCD() < 0){
-            super.reproduceCD();
-        }else{
-            this.setReproduce(true);
+    public Agent reproduce(Agent partner){
+
+        if (this.getSexe() != partner.getSexe() && this.getEnergie() > 50 && partner.getEnergie() > 50){
+            if (this.getReproduceCD() == 0 && partner.getReproduceCD() == 0){
+                Agent child = this.
+            }
         }
     }
     
-    public boolean CanReproduce(){
-
-        return canReproduce;
-    }
-
-    public void setReproduce(boolean repro){
-
-        this.canReproduce = repro;
-    }
+    
 }

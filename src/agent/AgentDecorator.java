@@ -20,9 +20,12 @@ public abstract class AgentDecorator implements Agent{
 
     public void move(){
         agent.move();
-        this.energie--;
     }
 
+    public Agent reproduce(Agent partner){
+
+        return agent.reproduce(partner);
+    }
     public String getName(){
 
         return agent.getName();
