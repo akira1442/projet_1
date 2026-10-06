@@ -11,6 +11,7 @@ public interface Agent{
     public Agent reproduce(Agent partner);
     public int getReproduceCD();
     public void reproduceCD();
+    public void setReproduce(int reproduce);
     public void move();
     public void energyExpend(int x);
 }

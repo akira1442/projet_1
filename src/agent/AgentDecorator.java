@@ -56,6 +56,11 @@ public abstract class AgentDecorator implements Agent{
         return agent.getReproduceCD();
     }
 
+    public void setReproduce(int reproduce){
+
+        agent.setReproduce(reproduce);
+    }
+
     public void reproduceCD(){
 
         agent.reproduceCD();
