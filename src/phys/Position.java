@@ -33,6 +33,17 @@ public class Position {
         return new Position(0, 0, 0);
     }
 
+    /**
+     * Constructeur de copie
+     * @param other copie
+     */
+    public Position(Position other){
+
+        this.x = other.x;
+        this.y = other.y;
+        this.z = other.z;
+    }
+
     public int getX(){
         return this.x;
     }
@@ -54,9 +65,25 @@ public class Position {
 
     public void newPos(int x, int y, int z){
 
-        this.x = x;
-        this.y = y;
-        this.z = z;
+        this.x += x;
+        this.y += y;
+        this.z += z;
+    }
+
+    @Override 
+    public Position clone(){
+
+        return new Position(this.x, this.y, this.z);
+    }
+    
+    @Override 
+    public boolean equals(Object obj){
+
+        if (obj instanceof Position){
+            Position other = (Position)obj;
+            return (other.getX() == this.x) && (other.getY() == this.y) && (other.getZ() == this.z);
+        }
+        return false;
     }
 
     @Override

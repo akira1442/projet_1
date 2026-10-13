@@ -11,13 +11,23 @@ public class Predateur extends AgentAbstrait{
 
     // Variable d'attribut
 
-    // Constructeur
+    // Constructeurs
 
     public Predateur(String name, Position pos, int age, int energie){
         
         super(name, pos, age, energie);
     }
 
+    /**
+     * Constructeur de copie
+     * @param other copie
+     */
+    public Predateur(Predateur other){
+
+        super(other.getName(), other.getPos(), other.getAge(), other.getEnergie());
+
+    }
+    
     // Méthodes 
 
     @Override 

@@ -94,7 +94,7 @@ public class AgentDeplacement extends AgentDecorator{
         return true;
     }
 
-    public Position[] getNeighbors() {
+    public Agent[] getNeighbors() {
         return neighbors;
     }
 
