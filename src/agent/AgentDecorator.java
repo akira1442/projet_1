@@ -2,13 +2,13 @@ package agent;
 
 import phys.Position;
 
-public abstract class AgentDecorator implements Agent{
+public abstract class AgentDecorator extends AgentAbstrait{
 
     private Agent agent;
-    private int energie;
 
     public AgentDecorator(Agent agent){
         
+        super(agent.getName(), agent.getPos(), agent.getAge(), agent.getEnergie());
         this.agent = agent;
     }
 

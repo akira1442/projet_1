@@ -3,6 +3,7 @@ package agent;
 import phys.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Decorateur permettant de gérer le déplacement des agents
@@ -27,7 +28,7 @@ public class AgentDeplacement extends AgentDecorator{
                     int ny = pos.getY() + dy;
                     if ((nx >= 0) && (nx < gridSize) && (ny >= 0) && (ny < gridSize)){
                         try{
-                            neighbors[indice] = new Position(nx, ny, 0);
+                            neighborsCases[indice] = new Position(nx, ny, 0);
                             indice++;
                         }catch(NullPointerException e){
                             System.out.println(String.format("%s, indice = %d", e, indice));
@@ -41,7 +42,7 @@ public class AgentDeplacement extends AgentDecorator{
     /**
      * @param neighbors Tableau des cases voisines accessible
      */
-    private Position[] neighbors;
+    private Position[] neighborsCases;
     /**
      * @param DIRECTION Contient les direction normée pour se déplacer dans la grille.
      * Valeurs: -1 0 1
@@ -55,7 +56,7 @@ public class AgentDeplacement extends AgentDecorator{
     public AgentDeplacement(Agent agent) {
         
         super(agent);
-        this.neighbors = new Position[8];
+        this.neighborsCases = new Position[8];
     }
     
     /**
@@ -68,19 +69,25 @@ public class AgentDeplacement extends AgentDecorator{
     public void move(){
         
         Comportement c = new Comportement();
-        c.mooreNeighborhood(getPos(), World.TAILLE);
+        c.mooreNeighborhood(super.getPos(), World.TAILLE);
         
-        Position p = neighbors[(int)(Math.random() * 8)];
+        Position p = neighborsCases[(int)(Math.random() * 8)];
         
         try{
             super.getPos().newPos(p);
         }catch(NullPointerException e){
             while (p == null) {
-                p = neighbors[(int)(Math.random() * 8)];
+                p = neighborsCases[(int)(Math.random() * 8)];
                 System.err.println(e);
             }
         }
         super.energyExpend(1);
+    }
+
+    @Override
+    public void updateNeighbors(List<Agent> agents) {
+        
+        super.updateNeighbors(agents);
     }
 
     /**
@@ -94,8 +101,14 @@ public class AgentDeplacement extends AgentDecorator{
         return true;
     }
 
+    public Position[] getNeighborsCases() {
+        return neighborsCases;
+    }
+
+    @Override
     public Agent[] getNeighbors() {
-        return neighbors;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNeighbors'");
     }
 
     @Override 
