@@ -107,8 +107,8 @@ public class AgentDeplacement extends AgentDecorator{
 
     @Override
     public Agent[] getNeighbors() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNeighbors'");
+        
+        return super.getNeigbors();
     }
 
     @Override 

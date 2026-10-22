@@ -48,7 +48,7 @@ public class SimuTests {
                 System.out.println(a.toString());
 
                 // #2 Reproduction
-                Agent[] partners = Stream.generate(() -> ); 
+                //Agent[] partners = Stream.generate(() -> ); 
             }
             world.updateWorld(listAgent);
             world.printWorld(listAgent, TAILLE);
