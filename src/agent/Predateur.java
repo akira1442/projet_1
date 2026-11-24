@@ -52,6 +52,12 @@ public class Predateur extends AgentAbstrait{
         
         return;
     }
+    
+	@Override
+	public Agent[] getNeighbors() {
+		
+		return super.getNeigbors();
+	}
 
     @Override
     public String toString(){

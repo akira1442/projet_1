@@ -11,7 +11,7 @@ public class SimuTests {
     public static void main(String[] args) {
         
         List<Agent> listAgent = new ArrayList<>();
-        int nbProie = 1, nbPredateur = 1;
+        int nbProie = 0, nbPredateur = 4;
 
         /*Taille de la grille */
         int TAILLE = World.TAILLE;
@@ -48,7 +48,14 @@ public class SimuTests {
                 System.out.println(a.toString());
 
                 // #2 Reproduction
-                //Agent[] partners = Stream.generate(() -> ); 
+                Agent[] partners = tmp.getNeighbors(); 
+                Agent partner = null;
+                
+                do{
+                	partner = partners[(int)(Math.random() * 8)];
+                }while(partner != null);
+                tmp.reproduce(partner);	
+                
             }
             world.updateWorld(listAgent);
             world.printWorld(listAgent, TAILLE);

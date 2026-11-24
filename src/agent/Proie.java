@@ -25,7 +25,7 @@ public class Proie extends AgentAbstrait{
 
         if (this.getSexe() != partner.getSexe() && this.getEnergie() >= 50 && partner.getEnergie() >= 50){
             if (this.getReproduceCD() == 0 && partner.getReproduceCD() == 0 && Math.random() < REPRODUCE_RATE){
-                Agent child = new Predateur("ChildProie", new Position(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ()), 0, 100);
+                Agent child = new Proie("ChildProie", new Position(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ()), 0, 100);
                 
                 this.energyExpend(this.getEnergie()/2);
                 partner.energyExpend(partner.getEnergie()/2);
@@ -43,6 +43,12 @@ public class Proie extends AgentAbstrait{
         return;
     }
 
+	@Override
+	public Agent[] getNeighbors() {
+		
+		return super.getNeigbors();
+	}
+    
     @Override
     public String toString(){
 

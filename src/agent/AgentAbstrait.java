@@ -74,9 +74,9 @@ public abstract class AgentAbstrait implements Agent{
 
     /**    (non-Javadoc)
      * Parcours du voisinage:
+     * 6 7 8
+     * 1 x 2
      * 3 4 5
-     * 6 x 7
-     * 0 1 2
      * @see agent.Agent#updateNeighbors(java.util.List)
      */
     public void updateNeighbors(List<Agent> agents){
@@ -157,7 +157,13 @@ public abstract class AgentAbstrait implements Agent{
 
     @Override
     public String toString(){
-
-        return String.format("%s, Position: %s, Energie: %d, Age: %d, Sexe: %d", this.name, this.getPos().toString(), this.energie, this.age, this.sexe);
+    	
+    	String s = "Voisin :" + this.nbNeighbors;
+    	
+    	for (int i = 0; i < this.neighbors.length; i++) {
+    		s = s + "\n		" + this.neighbors[i].getName() ;
+    	}
+    	
+        return String.format("%s, Position: %s, Energie: %d, Age: %d, Sexe: %d, %s", this.name, this.getPos().toString(), this.energie, this.age, this.sexe, s);
     }
 }
